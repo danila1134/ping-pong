@@ -1,4 +1,10 @@
 from pygame import *
+size_x = 700
+size_y = 500
+window = display.set_mode(size_x, size_y)
+window.set_caption('Пинг понг')
+back = (66,133,180)
+window.fill(back)
 
 class GameSprite(sprite.Sprite):
  #конструктор класса
@@ -24,7 +30,9 @@ class Player(GameSprite):
         keys = key.get_pressed()
         if keys[K_UP] and self.rect.y > 5:
             self.rect.y -= self.speed
-        if keys[K_s] and self.rect.y < size_x - 80:
+        if keys[K_DOWN] and self.rect.y < size_x - 80:
             self.rect.y += self.speed
+         
         
   
+
